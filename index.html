@@ -180,6 +180,31 @@ h1 .muted { color: rgba(242,239,233,0.25); }
   text-transform: uppercase; color: var(--coral); font-weight: 500;
 }
 
+/* Nigerian flag badge */
+.photo-flag {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 3;
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 20px;
+  height: 13px;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.flag-stripe {
+  flex: 1;
+  height: 100%;
+}
+.flag-green { background: #008751; }
+.flag-white { background: #FFFFFF; }
+
+/* Eyebrow responsive */
+.eyebrow-mobile { display: none; }
+.eyebrow-desktop { display: inline; }
+
 /* ── DIVIDER ── */
 .divider {
   border: none; border-top: 1px solid var(--border); margin: 0 48px;
@@ -349,9 +374,12 @@ footer {
   }
   .hero-text { align-items: center; }
   .hero-eyebrow { justify-content: center; }
+  .eyebrow-desktop { display: none; }
+  .eyebrow-mobile { display: inline; }
   .hero-eyebrow::before { display: none; }
   .hero-photo { width: 160px; height: 200px; margin: 0 auto; order: -1; }
   .photo-tag { display: none; }
+  .photo-flag { display: flex; }
   h1 { font-size: clamp(40px, 12vw, 58px); letter-spacing: -2px; }
   .hero-sub { max-width: 100%; font-size: 15px; }
   .hero-actions { justify-content: center; }
@@ -406,7 +434,10 @@ footer {
 <!-- HERO -->
 <div class="hero">
   <div class="hero-text">
-    <div class="hero-eyebrow fade-in">Lagos, Nigeria &middot; Building for Africa and beyond</div>
+    <div class="hero-eyebrow fade-in">
+      <span class="eyebrow-desktop">Lagos, Nigeria &middot; Building for Africa and beyond</span>
+      <span class="eyebrow-mobile">Building for Africa and beyond</span>
+    </div>
     <h1 class="fade-in" style="transition-delay:0.1s">
       Ademola<br/>
       <span class="muted">&ldquo;</span><em>Admoll</em><span class="muted">&rdquo;</span><br/>
@@ -422,7 +453,11 @@ footer {
   </div>
   <div class="hero-photo fade-in" style="transition-delay:0.15s">
     <img src="Admoll Studio.png" alt="Ademola Adefemi" />
-    <div class="photo-tag">Lagos &middot; NG</div>
+    <div class="photo-flag">
+      <div class="flag-stripe flag-green"></div>
+      <div class="flag-stripe flag-white"></div>
+      <div class="flag-stripe flag-green"></div>
+    </div>
   </div>
 </div>
 
@@ -573,7 +608,7 @@ footer {
   <div class="contact-inner fade-in">
     <div class="section-label" style="justify-content:center">Contact</div>
     <h2>Let&rsquo;s connect.</h2>
-    <p>Open to conversations about fintech infrastructure, AI in credit risk, and opportunities in the UK tech ecosystem.</p>
+    <p>Open to conversations about fintech infrastructure, AI in credit risk, and opportunities in the tech ecosystem.</p>
     <div class="contact-links">
       <a href="mailto:admoll.adefemi@gmail.com" class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -598,7 +633,7 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">admoll<span class="dot">.</span>dev</div>
-  <div> Admoll Adefemi &middot; Lagos, Nigeria</div>
+  <div>Ademola &ldquo;Admoll&rdquo; Adefemi &middot; Lagos, Nigeria</div>
 </footer>
 
 <script>
